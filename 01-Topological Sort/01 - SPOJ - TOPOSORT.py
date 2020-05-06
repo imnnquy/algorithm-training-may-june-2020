@@ -1,5 +1,8 @@
-#https://www.spoj.com/problems/TOPOSORT/
+# https://www.spoj.com/problems/TOPOSORT/
+
+
 import heapq
+
 
 def kahn(graph):
 	V = len(graph)
@@ -23,6 +26,7 @@ def kahn(graph):
 				heapq.heappush(zero_in_degree, i)
 	return result
 
+
 def solution():
 	V, E = map(int, input().split())
 	graph = [[] for i in range(V)]
@@ -35,5 +39,6 @@ def solution():
 		print('Sandro fails.')
 	else:
 		print(*result)
+
 
 solution()
