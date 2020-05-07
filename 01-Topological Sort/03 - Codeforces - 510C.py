@@ -1,4 +1,4 @@
-# https://www.spoj.com/problems/TOPOSORT/
+# https://codeforces.com/problemset/problem/510/C
 
 
 import heapq
@@ -19,7 +19,7 @@ def kahn(graph):
     while zero_in_degree:
         u = heapq.heappop(zero_in_degree)
 
-        result.append(u + 1)
+        result.append(chr(u + 97))
         for i in graph[u]:
             in_degree[i] -= 1
             if in_degree[i] == 0:
@@ -28,17 +28,30 @@ def kahn(graph):
 
 
 def solution():
-    V, E = map(int, input().split())
+    V = 26
+    E = int(input())
     graph = [[] for i in range(V)]
+    names = []
     for i in range(E):
-        u, v = map(int, input().split())
-        graph[u - 1].append(v - 1)
+        names.append(input().strip())
+
+    for i in range(E - 1):
+        min_length = min(len(names[i]), len(names[i + 1]))
+        found = False
+        for j in range(min_length):
+            if names[i][j] != names[i + 1][j]:
+                found = True
+                graph[ord(names[i][j]) - 97].append(ord(names[i + 1][j]) - 97)
+                break
+        if not found and len(names[i]) > len(names[i + 1]):
+            print('Impossible')
+            return
 
     result = kahn(graph)
     if len(result) < V:
-        print('Sandro fails.')
+        print('Impossible')
     else:
-        print(*result)
+        print(*result, sep='')
 
 
 solution()

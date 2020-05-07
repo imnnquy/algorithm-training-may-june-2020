@@ -1,4 +1,4 @@
-# https://vn.spoj.com/problems/MAKETREE/
+# https://www.spoj.com/problems/MAKETREE/
 
 
 def kahn(graph):
