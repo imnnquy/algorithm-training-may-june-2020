@@ -3,8 +3,9 @@
 
 def solution():
     T = int(input())
-    friends = []
+
     for _ in range(T):
+        friends = []
         N, K = map(int, input().strip().split())
         for _ in range(N):
             friends.append(int(input(), 2))
