@@ -1,4 +1,5 @@
-# https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=22&page=show_problem&problem=2001
+# https://open.kattis.com/problems/brexitnegotiations
+# https://vjudge.net/problem/Kattis-brexitnegotiations
 
 
 import heapq
