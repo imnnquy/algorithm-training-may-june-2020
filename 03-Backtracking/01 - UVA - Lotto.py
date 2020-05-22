@@ -12,13 +12,18 @@ def backtrack(prev, res, array):
 
 
 def solution():
+    is_first = True
     while True:
         line = list(map(int, input().strip().split()))
         if line[0] == 0:
             return
 
+        if not is_first:
+            print()
+        else:
+            is_first = False
+
         backtrack(-1, [], line[1:])
-        print()
 
 
 solution()
